@@ -67,7 +67,7 @@ Build a fast, mobile-first, static website hosted on GitHub Pages to inform gues
    - `tasks/index.html` lists issued task briefings.
    - Copy `tasks/task-template.html` for each task and link the new page from the task register.
    - Do not invent tasks; an empty register is appropriate until the organiser adds them.
-5. **The Rations (Food & Drink):**
+5. **The venue (Food & Drink):**
    - Dietary requirements notification and bar details.
 6. **The Final Judgement (RSVP):**
    - Embedded form or interactive submission link with a strict RSVP deadline.

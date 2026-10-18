@@ -346,7 +346,7 @@ h1 {
 }
 
 .rules-grid,
-.rations-grid {
+.venue-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
@@ -511,7 +511,7 @@ h1 {
   font-weight: 800;
 }
 
-.rations-grid {
+.venue-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -844,7 +844,7 @@ h1 {
     font-size: 1.05rem;
   }
 
-  .rations-grid {
+  .venue-grid {
     grid-template-columns: 1fr;
   }
 
