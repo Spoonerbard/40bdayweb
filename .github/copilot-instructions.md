@@ -10,15 +10,14 @@ Keep dependencies minimal. A static bundle (HTML, modern CSS, lightweight vanill
 │   └── copilot-instructions.md   # Agent rules & design system
 ├── assets/
 │   ├── css/
-│   │   └── style.css             # Taskmaster palette & wax-seal styles
-│   ├── js/
-│   │   └── main.js               # Accordions, countdown, RSVP interactions
-│   └── images/
-│       ├── wax-seal.svg
-│       └── envelope-bg.png
-├── data/
-│   └── tasks.json                # Pre-event tasks or agenda items
-├── index.html                    # Single-page guest hub
+│   │   └── style.css             # Shared responsive Taskmaster styling
+│   └── js/
+│       └── main.js               # Home-page countdown
+├── tasks/
+│   ├── index.html                # Task register
+│   └── task-template.html        # Copy to create each task detail page
+├── index.html                    # Guest hub and event logistics
+├── rules.html                    # Gameplay rules
 └── README.md
 
 ```
@@ -59,15 +58,18 @@ Build a fast, mobile-first, static website hosted on GitHub Pages to inform gues
 
 ## Essential Sections to Generate
 1. **The Brief (Hero):** Event title ("Alex Horne's Assistant cordially summons you to..."), recipient name placeholder, and countdown timer.
-2. **The Rules (Essential Logistics):**
+2. **The Logistics (Home page):**
    - Date, Arrival Window, and Curfew.
    - Venue coordinates / address and transport advice.
    - Dress code instructions (e.g., "Sensible shoes for nonsensical activities").
-3. **The Tasks (Schedule & Format):**
-   - Interactive accordion or expandable task cards detailing what to expect (Prize Task submissions, team rounds, solo challenges).
-4. **The Rations (Food & Drink):**
+3. **The Rules (Separate page):** Editable gameplay guidance and event-specific rules.
+4. **The Tasks (Separate task register and detail pages):**
+   - `tasks/index.html` lists issued task briefings.
+   - Copy `tasks/task-template.html` for each task and link the new page from the task register.
+   - Do not invent tasks; an empty register is appropriate until the organiser adds them.
+5. **The Rations (Food & Drink):**
    - Dietary requirements notification and bar details.
-5. **The Final Judgement (RSVP):**
+6. **The Final Judgement (RSVP):**
    - Embedded form or interactive submission link with a strict RSVP deadline.
 
 ```
@@ -80,19 +82,17 @@ Open Copilot Chat in VS Code (`Ctrl+Alt+I` / `Cmd+Option+I` or via sidebar), swi
 
 #### Prompt 1: Scaffold & Layout
 
-> "Read `.github/copilot-instructions.md`. Create `index.html` and `assets/css/style.css`. Scaffold the full semantic structure for the site including the Hero, Logistics ('The Rules'), Schedule ('The Tasks'), Food & Drink ('The Rations'), and RSVP sections. Use CSS variables for the Taskmaster colour scheme and ensure responsive flex/grid layouts."
+> "Read `.github/copilot-instructions.md`. Build a static guest hub in `index.html`, a separate gameplay rules page in `rules.html`, and a task register at `tasks/index.html` with an unlinked detail-page template at `tasks/task-template.html`. Use semantic HTML, responsive CSS, and relative links that work under GitHub Pages subpaths."
 
 #### Prompt 2: Taskmaster Styling & Interactive Elements
 
-> "Add styling in `assets/css/style.css` to give the task sections the appearance of folded parchment envelopes with simulated red wax seals. Create `assets/js/main.js` with:
-> 1. A countdown timer counting down to the event start.
-> 2. An interactive reveal animation when a user clicks a 'Task Envelope' card to open the event details."
+> "Style the task register and individual task briefings in `assets/css/style.css` with parchment and wax-seal motifs. Ensure task cards link to their own static detail pages. Keep `assets/js/main.js` focused on the event countdown."
 > 
 > 
 
 #### Prompt 3: Polish & Deployment Check
 
-> "Review `index.html` to confirm all asset paths are relative (`./assets/...`) so they resolve properly under GitHub Pages subpaths. Ensure all accessibility attributes (`aria-expanded`, alt text) are set."
+> "Review all root and nested HTML pages. Confirm internal links and relative asset paths resolve under GitHub Pages subpaths, and preserve semantic headings, keyboard navigation, and accessible link text."
 
 ---
 

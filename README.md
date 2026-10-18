@@ -4,7 +4,7 @@ A mobile-first, static guest-information site for a Taskmaster-themed 40th birth
 
 ## Personalise the briefing
 
-Edit `index.html` and replace every bracketed value, including the guest name, date, arrival window, venue and address, travel details, dress code, food and drink, RSVP deadline, and organiser contact information.
+Edit `index.html` and replace its bracketed values, including the guest name, date, arrival window, venue and address, travel details, dress code, food and drink, RSVP deadline, and organiser contact information. Also complete or remove the bracketed guidance on `rules.html` before sharing it.
 
 Before sharing the site:
 
@@ -14,6 +14,25 @@ Before sharing the site:
 4. Set `data-event-date` on the countdown element to the event's start date and time in ISO 8601 format, including its UTC offset, for example `2027-06-12T18:30:00+01:00`. Leave it empty until the date is confirmed.
 
 The countdown deliberately displays “Event date to be announced” while its date is unset. The task envelopes use native `<details>` elements, so they remain usable without JavaScript.
+
+## Tasks and rules
+
+- The task catalogue is at `tasks/index.html` (visit `/tasks/`). It starts empty until task briefings are added.
+- To add a task, copy `tasks/task-template.html` to a new file in `tasks/` (for example, `task-01.html`), replace its bracketed content and page title, and add a link for it in `tasks/index.html`.
+- Keep new task pages beside the template so their `../assets/css/style.css` and links back to `./` continue to resolve.
+- When the first task is ready, remove the catalogue's empty-state section and add links inside a `<div class="task-index">`, using the existing card classes. For example:
+
+  ```html
+  <a class="task-card" href="./task-01.html">
+    <span class="task-card__number">Task 01</span>
+    <span class="task-card__title">[TASK TITLE]</span>
+    <span class="task-card__description">[SHORT TASK DESCRIPTION]</span>
+    <span class="task-card__seal" aria-hidden="true">Open</span>
+  </a>
+  ```
+
+- The separate gameplay rules page is `rules.html`. Replace its bracketed guidance with the organiser's final rules, or remove sections that are not needed. Event logistics remain on the home page.
+- The template is a starting point, not an issued task; link only completed task pages from the public catalogue.
 
 ## Publish with GitHub Pages
 
