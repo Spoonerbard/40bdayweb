@@ -419,6 +419,40 @@ h1 {
   max-width: 58rem;
 }
 
+.task-register-section + .task-register-section {
+  margin-top: 3rem;
+}
+
+.task-register-section > h2 {
+  margin-bottom: 1rem;
+  color: var(--red-dark);
+  font-size: 1.8rem;
+}
+
+.register-rules {
+  max-width: 58rem;
+  margin-bottom: 3rem;
+}
+
+.register-rules h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.8rem;
+}
+
+.register-rules ul {
+  margin-bottom: 0;
+  padding-left: 1.4rem;
+}
+
+.register-rules li {
+  padding-left: 0.2rem;
+  color: var(--muted);
+}
+
+.register-rules li + li {
+  margin-top: 0.35rem;
+}
+
 .task-card {
   position: relative;
   display: grid;
